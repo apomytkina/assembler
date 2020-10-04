@@ -158,13 +158,26 @@ changeVector:
                 cmp ebx, 1
                 jl lessThan0
 
-        continueLoop4:
+                cmp ebx, 0
+                jg moreThan0
+
+
+           loop41:
+
+                add [i], 1
+                mov ecx, [i]
+                imul ecx, dword 4
+                mov eax, [mas]
+                add eax, ecx
+                mov ebx, [eax]
+
+        moreThan0:
 
                 mov [eax], ebx
                 mov ecx, [i]
                 inc ecx
                 cmp ecx, [N]
-                jne loop4
+                jne loop41
                 jmp end4
 
         lessThan0:
@@ -182,7 +195,7 @@ changeVector:
                 cinvoke printf, endl
                 mov [i], -1
                 cinvoke printf, outStart
-                jmp loop5
+                jmp loop5            
 
 ;-------------------------------fifth act - showing new vector--------------------------
 
