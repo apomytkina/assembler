@@ -21,7 +21,7 @@ section '.data' data readable writable
         enterN db 'Enter N:', 10, 13, '>> ', 0
         info db "New array:", 10, 13, '>>', 0
         endl db 10, 13, 0
-        repEnter db 'N must be from 1 to 10^6. Enter the size of array again', 0
+        repEnter db 'N must be from 1 to 10^6. Enter the size of array again', 10, 13, 0
         enterStart db 'Enter the ', 0
         enterEnd db '-st elemet', 10, 13, '>> ', 0
         outStart db '[ ', 0
@@ -155,7 +155,7 @@ changeVector:
                 add eax, ecx
                 mov ebx, [eax]
 
-                cmp ebx, 0
+                cmp ebx, 1
                 jl lessThan0
 
         continueLoop4:
