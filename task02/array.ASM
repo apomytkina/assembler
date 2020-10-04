@@ -19,7 +19,7 @@ include 'win32a.inc'
 section '.data' data readable writable
 
         enterN db 'Enter N:', 10, 13, '>> ', 0
-        info db "Now we'll change the array.", 10, 13, '>>', 0
+        info db "New array:", 10, 13, '>>', 0
         endl db 10, 13, 0
         repEnter db 'N must be from 1 to 10^6. Enter the size of array again', 0
         enterStart db 'Enter the ', 0
